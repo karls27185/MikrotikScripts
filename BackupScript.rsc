@@ -1,14 +1,6 @@
 {
 :log info "Starting Backup Script...";
 
-:log info "Creating local variable";
-:local sysname [/system identity get name];
-:local sysver [/system package get system version];
-:local sn [/system routerboard get serial-number];
-
-:local backupfile ("$sysname-$sysver-$sn-backup-" . [:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".backup");
-:local exportfile ("$sysname-$sysver-$sn-backup-" . [:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".rsc");
-
 :local emailaddress emailaddress@exemple.ru;
 :local mailpass exemple_mailpass;
 :local mailserver smtp.exemple_mailserver.ru;
@@ -19,7 +11,13 @@
 :local ftppassword exemple_ftppassword;
 :local ftpdir "/exemple_ftpdir/";
 
+:log info "Creating local variable";
+:local sysname [/system identity get name];
+:local sysver [/system package get system version];
+:local sn [/system routerboard get serial-number];
 
+:local backupfile ("$sysname-$sysver-$sn-backup-" . [:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".backup");
+:local exportfile ("$sysname-$sysver-$sn-backup-" . [:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".rsc");
 
 :delay 2;
 
