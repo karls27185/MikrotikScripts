@@ -1,6 +1,7 @@
 {
 :log info "Starting Backup Script...";
 
+
 :log info "Creating local variable";
 
 :local emailaddress emailaddress@exemple.ru;
