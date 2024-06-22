@@ -1,6 +1,8 @@
 {
 :log info "Starting Backup Script...";
 
+:log info "Creating local variable";
+
 :local emailaddress emailaddress@exemple.ru;
 :local mailpass exemple_mailpass;
 :local mailserver smtp.exemple_mailserver.ru;
@@ -11,7 +13,6 @@
 :local ftppassword exemple_ftppassword;
 :local ftpdir "/exemple_ftpdir/";
 
-:log info "Creating local variable";
 :local sysname [/system identity get name];
 :local sysver [/system package get system version];
 :local sn [/system routerboard get serial-number];
@@ -57,5 +58,5 @@
 }
 
 
-:log info "All System Backups emailed successfully.\nBackuping completed.";
+:log info "All System Backups sent successfully.\nBackuping completed.";
 }
